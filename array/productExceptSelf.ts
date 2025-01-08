@@ -38,3 +38,24 @@ function productExceptSelf(nums: number[]): number[] {
     return numbers
 
 };
+
+
+function productExceptSelfFixedMem(nums: number[]): number[] {
+    const numbers: number[] = new Array(nums.length)
+
+    let prefix = 1
+    for (let i = 0; i < nums.length; i++) {
+        numbers[i] = prefix
+        prefix *= nums[i]
+    }
+
+    let suffix = 1
+    for (let i = nums.length - 1; i >= 0; i--) {
+        numbers[i] *= suffix
+        suffix *= nums[i]
+
+    }
+
+    return numbers
+
+};
