@@ -12,7 +12,7 @@ The returned string should only have a single space separating the words. Do not
 function reverseWords(s: string): string {
     let i = 0
     let n = s.length
-    let result: string = ""
+    let result: string[] = []
 
     while (i < n) {
         while (i < n && s[i] === ' ') {
@@ -32,11 +32,11 @@ function reverseWords(s: string): string {
 
         let sub = s.substring(i, j)
 
-        result = result?.length !== 0 ? sub + " " + result : sub
+        result.push(sub)
 
         i = j + 1
 
     }
 
-    return result
+    return result.reverse().join("")
 };
