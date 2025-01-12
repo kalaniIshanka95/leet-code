@@ -7,7 +7,7 @@ On each day, you may decide to buy and/or sell the stock. You can only hold at m
 Find and return the maximum profit you can achieve.
  */
 
-function maxProfit(prices: number[]): number {
+function maxProfitII(prices: number[]): number {
     let totalProfit = 0;
 
     for (let i = 1; i < prices.length; i++) {
